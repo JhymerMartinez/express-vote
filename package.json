@@ -1,0 +1,42 @@
+{
+  "name": "express-vote",
+  "version": "1.0.0",
+  "description": "Voting simulator",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest --no-cache --runInBand",
+    "test:watch": "NODE_ENV=test jest --no-cache  --runInBand --watchAll",
+    "dev": "NODE_ENV=development nodemon src/start.js",
+    "start": "pm2 start src/start.js",
+    "seeds:dev": "NODE_ENV=development node src/db/seeds.js"
+  },
+  "author": "Jhymer Martínez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "composable-middleware": "^0.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.17",
+    "morgan": "^1.10.0",
+    "pm2": "^4.4.0"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./tests/setup.js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
